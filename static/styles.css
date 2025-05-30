@@ -1,0 +1,113 @@
+/* Reset y base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Contenedor general */
+.container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* Header y navegación */
+nav {
+  background-color: #2c3e50;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  margin-bottom: 40px;
+}
+
+nav a {
+  color:#1abc9c;
+  text-decoration: none;
+  margin: 0 20px;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #1abc9c;
+}
+
+/* Títulos */
+h1, h2, h3 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* Secciones */
+section, .box {
+  background: white;
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Botones */
+button, .btn {
+  background-color: #1abc9c;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover, .btn:hover {
+  background-color: #16a085;
+}
+
+/* Listas */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  background-color: #ecf0f1;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+  margin: 20px 0;
+  padding-left: 90px;
+  padding-right: 60px;
+}
+
+ul li:hover {
+  background-color: #dfe6e9;
+}
+
+/* Footer */
+footer {
+  margin-top: auto;
+  text-align: center;
+  padding: 20px;
+  color: #888;
+  font-size: 0.9rem;
+}
+/* Párrafos separados de los bordes */
+p {
+    margin: 20px 0;
+    padding-left: 80px;
+    padding-right: 80px;
+}

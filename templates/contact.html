@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block titulo %} Contacto - Nicolás Cano{% endblock %}
+
+{% block contenido %}
+   
+        <h1>Contacto</h1>
+        <p>Email: <a href="mailto:nicolas.cano.leal@gmail.com">nicolas.cano.leal@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/nicolas-andres-cano-leal/" target="_blank">Perfil de LinkedIn</a></p>
+        <p>GitHub: <a href="https://github.com/NicolasAndresCL" target="_blank">Perfil de GitHub</a></p>
+        <p><a href="/">Volver al inicio</a></p>
+
+{% endblock %}
+
+{% block footer %}
+    <footer>
+        <p>Desarrollado por <strong>Nicolás Andrés Cano Leal</strong></p>
+        <p>Mi Pagina Web 2025</p>
+    </footer>
+{% endblock %}
+
+{% block styles %}
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+{% endblock %}
