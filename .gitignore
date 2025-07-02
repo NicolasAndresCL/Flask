@@ -1,0 +1,52 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+.env
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+env.bak/
+
+# VSCode settings
+.vscode/
+
+# SQLite database
+*.sqlite3
+*.db
+*.sqlite
+
+# Flask instance folder
+instance/
+
+# Logs and debug
+*.log
+*.pid
+*.bak
+*.swp
+*.tmp
+
+# Flask-specific
+*.egg-info/
+.mypy_cache/
+.flaskenv
+*.env
+
+# Pytest cache
+.pytest_cache/
+
+# Coverage reports
+htmlcov/
+coverage.xml
+.cache
+
+# Jupyter (in case you use it)
+.ipynb_checkpoints/
+
+# macOS and Windows noise
+.DS_Store
+Thumbs.db

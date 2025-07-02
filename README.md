@@ -1,52 +1,72 @@
-🚀 Proyecto Flask - Aplicación Web
+# 🚀 Proyecto Flask - Aplicación Web
 
-📌 Descripción
+## 📌 Descripción
 Este proyecto es una aplicación web desarrollada con Flask, diseñada para demostrar la implementación de rutas, vistas dinámicas y manejo de datos en una arquitectura backend eficiente.
 
-⚙️ Tecnologías utilizadas
-Python - Lenguaje principal para la lógica backend.
+## ⚙️ Tecnologías utilizadas
 
-Flask - Framework ligero y flexible para desarrollo web.
+- Python - Lenguaje principal para la lógica backend.
 
-Jinja2 - Motor de plantillas para vistas dinámicas.
+- Flask - Framework ligero y flexible para desarrollo web.
 
-Bootstrap - Estilos responsivos para mejorar la interfaz de usuario.
+- Jinja2 - Motor de plantillas para vistas dinámicas.
 
-Postman - Pruebas de API para validación de endpoints.
+- Bootstrap - Estilos responsivos para mejorar la interfaz de usuario.
 
-Git - Control de versiones y administración de código.
+- Postman - Pruebas de API para validación de endpoints.
 
-🌟 Características principales
-✅ Definición de rutas con Flask (GET y POST). ✅ Uso de Jinja2 para generar contenido dinámico. ✅ Configuración de un entorno virtual para aislar dependencias. ✅ Diseño responsivo con Bootstrap. ✅ Validación de endpoints con Postman. ✅ Organización de código siguiendo buenas prácticas en desarrollo backend.
+- Git - Control de versiones y administración de código.
 
-📂 Estructura del proyecto
-/Proyecto-Flask
-│── /static        # Archivos estáticos (CSS, imágenes)
-│── /templates     # Plantillas HTML dinámicas
-│── app.py         # Archivo principal con lógica y rutas
-│── requirements.txt  # Dependencias del proyecto
-│── README.md      # Documentación del proyecto
-🛠️ Instalación y uso
-Clonar el repositorio
+## 🌟 Características principales
 
-bash
+- ✅ Definición de rutas con Flask (GET y POST).
+- ✅ Uso de Jinja2 para generar contenido dinámico.
+- ✅ Configuración de un entorno virtual para aislar dependencias.
+- ✅ Diseño responsivo con Bootstrap.
+- ✅ Validación de endpoints con Postman.
+- ✅ Organización de código siguiendo buenas prácticas en desarrollo backend.
+
+# 📂 Estructura del proyecto
+```/Proyecto-Flask
+│── /api
+│   ├── __init__.py       # Inicializa el módulo API
+│   ├── routes.py         # Define rutas
+│   ├── models.py         # Modelos (ORM)
+│   └── database.py       # Conexión a la base de datos
+│
+│── /static
+│── /templates
+│── app.py                # Inicialización principal
+│── requirements.txt
+│── README.md
+```
+# 🛠️ Instalación y uso
+
+- Clonar el repositorio
+
+```bash
 git clone https://github.com/NicolasAndresCL/Flask
 cd Proyecto-Flask
-Crear un entorno virtual
+```
+- Crear un entorno virtual
 
-bash
+```bash
 python -m venv venv
 source venv/bin/activate  # En macOS/Linux
 venv\Scripts\activate     # En Windows
-Instalar dependencias
+```
+- Instalar dependencias
 
-bash
+```bash
 pip install -r requirements.txt
-Ejecutar la aplicación
+```
 
-bash
+- Ejecutar la aplicación
+
+```bash
 python app.py
-🎯 Contribución
+```
+# 🎯 Contribución
 Si tienes ideas o mejoras para este proyecto, ¡no dudes en hacer un pull request o dejar tus sugerencias!
 
-📌 Repositorio en GitHub: GitHub - NicolasAndresCL/Flask
+# 📌 Repositorio en GitHub: GitHub - NicolasAndresCL/Flask
