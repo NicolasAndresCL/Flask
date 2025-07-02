@@ -1,72 +1,112 @@
-# 🚀 Proyecto Flask - Aplicación Web
+# 🚀 Flask Task Manager - Aplicación Web RESTful
 
 ## 📌 Descripción
-Este proyecto es una aplicación web desarrollada con Flask, diseñada para demostrar la implementación de rutas, vistas dinámicas y manejo de datos en una arquitectura backend eficiente.
+Este es un proyecto web desarrollado con Flask, que ha evolucionado de una aplicación basada en plantillas con Jinja2 a una arquitectura moderna basada en API REST. Incluye una estructura backend sólida, documentación interactiva y una base ideal para futuras integraciones con frontend como React.
+
+## 🔗 Puedes ver más de mis proyectos en: 👉 nicolasandrescl.pythonanywhere.com ⚙️ Este proyecto pronto estará desplegado y accesible desde mi portafolio.
+
+___
 
 ## ⚙️ Tecnologías utilizadas
 
-- Python - Lenguaje principal para la lógica backend.
+- Python 3.12 – Lógica principal del backend
 
-- Flask - Framework ligero y flexible para desarrollo web.
+- Flask – Framework web ligero y modular
 
-- Jinja2 - Motor de plantillas para vistas dinámicas.
+- Blueprints – Modularización de rutas en la API
 
-- Bootstrap - Estilos responsivos para mejorar la interfaz de usuario.
+- SQLite + SQLAlchemy – Base de datos relacional con ORM
 
-- Postman - Pruebas de API para validación de endpoints.
+- Flasgger (Swagger) – Documentación automática de la API
 
-- Git - Control de versiones y administración de código.
+- Jinja2 – Renderizado de HTML dinámico
 
-## 🌟 Características principales
+- Bootstrap – Diseño responsivo para el frontend
 
-- ✅ Definición de rutas con Flask (GET y POST).
-- ✅ Uso de Jinja2 para generar contenido dinámico.
-- ✅ Configuración de un entorno virtual para aislar dependencias.
-- ✅ Diseño responsivo con Bootstrap.
-- ✅ Validación de endpoints con Postman.
-- ✅ Organización de código siguiendo buenas prácticas en desarrollo backend.
+- Pytest – Pruebas unitarias
 
-# 📂 Estructura del proyecto
-```/Proyecto-Flask
+- Postman – Validación de endpoints
+
+- Git – Control de versiones
+
+___
+
+## 🌟 Funcionalidades principales
+
+✅ Renderizado de HTML usando Jinja2
+
+✅ API RESTful con operaciones CRUD para tareas
+
+✅ Documentación interactiva vía Swagger (/apidocs)
+
+✅ Integración con SQLite y manejo de base de datos con SQLAlchemy
+
+✅ Conjunto completo de pruebas unitarias con Pytest y base en memoria
+
+✅ Patrón de fábrica para la creación de la app con modo de testing
+
+✅ Manejo estructurado de errores y respuestas JSON
+
+✅ Listo para producción y despliegue remoto
+
+___
+
+# 📁 Estructura del proyecto
+
+```/Flask-TaskManager
 │── /api
-│   ├── __init__.py       # Inicializa el módulo API
-│   ├── routes.py         # Define rutas
-│   ├── models.py         # Modelos (ORM)
-│   └── database.py       # Conexión a la base de datos
+│   ├── __init__.py        # Registro del Blueprint
+│   ├── routes.py          # Rutas y lógica de la API
+│   ├── models.py          # Modelos con SQLAlchemy
+│   └── database.py        # Configuración de la base de datos
 │
-│── /static
-│── /templates
-│── app.py                # Inicialización principal
-│── requirements.txt
+│── /static                # Archivos estáticos (CSS, JS, etc.)
+│── /templates             # Plantillas HTML con Jinja2
+│── /tests                 # Pruebas con Pytest
+│
+│── app.py                 # Inicialización principal (factory)
+│── requirements.txt       # Dependencias del proyecto
+│── .gitignore             # Exclusiones para Git
 │── README.md
 ```
-# 🛠️ Instalación y uso
+___
 
-- Clonar el repositorio
+
+# ⚙️ Instalación y ejecución
+
+- Clona el repositorio:
 
 ```bash
 git clone https://github.com/NicolasAndresCL/Flask
-cd Proyecto-Flask
+cd Flask-TaskManager
 ```
-- Crear un entorno virtual
+- Crea y activa un entorno virtual:
 
 ```bash
 python -m venv venv
-source venv/bin/activate  # En macOS/Linux
-venv\Scripts\activate     # En Windows
+source venv/bin/activate      # macOS/Linux
+venv\Scripts\activate         # Windows
 ```
-- Instalar dependencias
+- Instala las dependencias:
 
 ```bash
 pip install -r requirements.txt
 ```
-
-- Ejecutar la aplicación
+- Ejecuta la aplicación:
 
 ```bash
 python app.py
 ```
-# 🎯 Contribución
-Si tienes ideas o mejoras para este proyecto, ¡no dudes en hacer un pull request o dejar tus sugerencias!
+- Corre los tests:
 
-# 📌 Repositorio en GitHub: GitHub - NicolasAndresCL/Flask
+```bash
+pytest
+```
+## 📘 Documentación de la API
+Una vez ejecutada la app, puedes acceder a la documentación Swagger desde: 📚 http://localhost:5000/apidocs
+
+## 🌍 En camino a producción
+Este proyecto será pronto desplegado y accesible desde mi portafolio personal en: 🔗 nicolasandrescl.pythonanywhere.com En futuras versiones incluirá autenticación, paginación y conexión con frontend dinámico.
+
+## 🤝 Contribución
+¿Tienes ideas para mejorar este proyecto? ¡Siéntete libre de abrir un issue o enviar un pull request! Todas las sugerencias son bienvenidas 🙌
