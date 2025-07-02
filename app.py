@@ -26,7 +26,14 @@ def create_app(testing=False):
         'title': 'Mi API de Tareas',
         'uiversion': 3,
         'specs_route': '/apidocs/',
-        'specs': [{'endpoint': 'apidocs_spec', 'route': '/apidocs_spec.json', 'rule_filter': lambda rule: True}]
+        'specs': [
+            {
+                'endpoint': 'apidocs_spec',
+                'route': '/apidocs_spec.json',
+                'rule_filter': lambda rule: True,
+                'model_filter': lambda tag: True,
+                }
+        ]
     }
     Swagger(app)
 
