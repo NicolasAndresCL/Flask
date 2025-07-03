@@ -33,30 +33,57 @@ ___
 
 ## 🌟 Funcionalidades principales
 
-✅ Renderizado de HTML usando Jinja2
+✅ Renderizado de HTML usando Jinja2 
+✅ API RESTful con operaciones CRUD para tareas 
+✅ Documentación interactiva vía Swagger en /apidocs 
+✅ Conjunto completo de pruebas unitarias con Pytest y base en memoria 
+✅ Integración con SQLite y manejo de base de datos con SQLAlchemy 
+✅ Patrón de fábrica (create_app) para entornos productivos y de testing 
+✅ Manejo estructurado de errores y respuestas JSON 
+✅ Modularización clara usando Blueprints separados 
+✅ Aplicación lista para despliegue remoto en producción
+___
 
-✅ API RESTful con operaciones CRUD para tareas
+## 🔐 Autenticación implementada con JWT
 
-✅ Documentación interactiva vía Swagger (/apidocs)
+- El proyecto ya cuenta con un flujo de autenticación seguro y profesional:
 
-✅ Integración con SQLite y manejo de base de datos con SQLAlchemy
+- POST /api/register: Registro de usuarios nuevos
 
-✅ Conjunto completo de pruebas unitarias con Pytest y base en memoria
+- POST /api/login: Autenticación y generación de token JWT
 
-✅ Patrón de fábrica para la creación de la app con modo de testing
+- Protección de rutas sensibles con @jwt_required()
 
-✅ Manejo estructurado de errores y respuestas JSON
+- Swagger configurado para enviar el token automáticamente desde el botón Authorize
 
-✅ Listo para producción y despliegue remoto
+- Esquema Bearer documentado para acceso autenticado
+
+- Tokens correctamente identificados y validados mediante get_jwt_identity()
+
+## 🎯 Esta arquitectura está preparada para escalar con:
+
+- Refresh Tokens
+
+- Perfiles de usuario
+
+- Autorización por roles o permisos
+
+- Integración con frontend dinámico como React
+
+___
+
+## 📘 Documentación de la API
+Una vez ejecutada la aplicación, podés acceder a la documentación Swagger desde: 📚 http://localhost:5000/apidocs
 
 ___
 
 # 📁 Estructura del proyecto
 
-```/Flask-TaskManager
+```//Flask
 │── /api
 │   ├── __init__.py        # Registro del Blueprint
-│   ├── routes.py          # Rutas y lógica de la API
+│   ├── routes.py          # Rutas y lógica de la API de tareas
+│   ├── auth.py            # Rutas de autenticación (login y registro)
 │   ├── models.py          # Modelos con SQLAlchemy
 │   └── database.py        # Configuración de la base de datos
 │
@@ -68,6 +95,7 @@ ___
 │── requirements.txt       # Dependencias del proyecto
 │── .gitignore             # Exclusiones para Git
 │── README.md
+
 ```
 ___
 
@@ -78,7 +106,7 @@ ___
 
 ```bash
 git clone https://github.com/NicolasAndresCL/Flask
-cd Flask-TaskManager
+cd Flask
 ```
 - Crea y activa un entorno virtual:
 
@@ -102,11 +130,23 @@ python app.py
 ```bash
 pytest
 ```
-## 📘 Documentación de la API
-Una vez ejecutada la app, puedes acceder a la documentación Swagger desde: 📚 http://localhost:5000/apidocs
+___
 
-## 🌍 En camino a producción
-Este proyecto será pronto desplegado y accesible desde mi portafolio personal en: 🔗 nicolasandrescl.pythonanywhere.com En futuras versiones incluirá autenticación, paginación y conexión con frontend dinámico.
+## 🌍 Despliegue y próximos pasos
+
+El proyecto será desplegado en breve en: 🔗 nicolasandrescl.pythonanywhere.com
+
+🧠 En próximas versiones se integrarán:
+
+- Refresh tokens
+
+- Paginación y filtros
+
+- Login desde frontend React
+
+- Roles y permisos dinámicos
+
+- Panel de administración
 
 ## 🤝 Contribución
 ¿Tienes ideas para mejorar este proyecto? ¡Siéntete libre de abrir un issue o enviar un pull request! Todas las sugerencias son bienvenidas 🙌
