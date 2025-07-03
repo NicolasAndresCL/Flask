@@ -5,9 +5,14 @@ from flask_cors import CORS
 from flasgger import Swagger
 from werkzeug.exceptions import HTTPException
 import json
+from api.models import User  
+
 
 from api.database import db
 from api import init_api
+from flask_jwt_extended import JWTManager
+
+jwt = JWTManager()
 
 def create_app(testing=False):
     app = Flask(__name__)
@@ -17,23 +22,29 @@ def create_app(testing=False):
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///:memory:' if testing else 'sqlite:///tasks.db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['TESTING'] = testing
+    app.config['JWT_SECRET_KEY'] = 'super-secret-key'  # Usá una env var real en producción
 
     db.init_app(app)
+    with app.app_context():
+        db.create_all()
+
     init_api(app)  # Registra el Blueprint una sola vez
+    jwt.init_app(app)
 
     # Swagger
     app.config['SWAGGER'] = {
         'title': 'Mi API de Tareas',
         'uiversion': 3,
         'specs_route': '/apidocs/',
-        'specs': [
-            {
-                'endpoint': 'apidocs_spec',
-                'route': '/apidocs_spec.json',
-                'rule_filter': lambda rule: True,
-                'model_filter': lambda tag: True,
-                }
-        ]
+        'securityDefinitions': {
+            'Bearer': {
+                'type': 'apiKey',
+                'name': 'Authorization',
+                'in': 'header',
+                'description': 'JWT Authorization header using the Bearer scheme. Example: "Authorization: Bearer {token}"'
+            }
+        },
+        'security': [{'Bearer': []}]
     }
     Swagger(app)
 

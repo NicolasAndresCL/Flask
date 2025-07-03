@@ -1,10 +1,11 @@
 from flask import Blueprint, jsonify, request, abort
+from flask_jwt_extended import jwt_required
 from .database import db
 from .models import Task
 from flasgger import swag_from
 
 
-api_bp = Blueprint('api', __name__, url_prefix='/api')
+api_bp = Blueprint('tasks', __name__, url_prefix='/api')
 
 def serialize_task(task):
     return {
@@ -15,9 +16,11 @@ def serialize_task(task):
     }
 
 @api_bp.route('/tasks', methods=['GET'])
+@jwt_required()
 @swag_from({
     'tags': ['Tareas'],
     'summary': 'Obtener todas las tareas',
+    'security': [{'Bearer': []}],
     'responses': {
         200: {
             'description': 'Lista de tareas',
@@ -41,9 +44,11 @@ def get_tasks():
     return jsonify([serialize_task(task) for task in tasks])
 
 @api_bp.route('/tasks/<int:task_id>', methods=['GET'])
+@jwt_required()
 @swag_from({
     'tags': ['Tareas'],
     'summary': 'Obtener una tarea por ID',
+    'security': [{'Bearer': []}],
     'parameters': [
         {
             'name': 'task_id',
@@ -78,9 +83,11 @@ def get_task(task_id):
     return jsonify(serialize_task(task))
 
 @api_bp.route('/tasks', methods=['POST'])
+@jwt_required()
 @swag_from({
     'tags': ['Tareas'],
     'summary': 'Crear una nueva tarea',
+    'security': [{'Bearer': []}],
     'parameters': [
         {
             'name': 'body',
@@ -122,9 +129,11 @@ def create_task():
 
 
 @api_bp.route('/tasks/<int:task_id>', methods=['PUT'])
+@jwt_required()
 @swag_from({
     'tags': ['Tareas'],
     'summary': 'Actualizar una tarea existente',
+    'security': [{'Bearer': []}],
     'parameters': [
         {
             'name': 'task_id',
@@ -167,9 +176,11 @@ def update_task(task_id):
     return jsonify(serialize_task(task))
 
 @api_bp.route('/tasks/<int:task_id>', methods=['DELETE'])
+@jwt_required()
 @swag_from({
     'tags': ['Tareas'],
     'summary': 'Eliminar una tarea existente',
+    'security': [{'Bearer': []}],
     'parameters': [
         {
             'name': 'task_id',
